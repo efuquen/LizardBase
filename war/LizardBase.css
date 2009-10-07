@@ -1,0 +1,9 @@
+/** Add css rules here for your application. */
+
+.gwt-Label {
+  margin: 5px;
+}
+
+.mainPanel {
+  width: 100%;
+}
