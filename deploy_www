@@ -1,0 +1,10 @@
+#!/bin/bash
+
+USER="root"
+SERVER="ec2-75-101-223-213.compute-1.amazonaws.com"
+PORT=22
+KEY="$HOME/.ssh/lizardbase.pem"
+
+WWW_DIR="/srv/http/lizard_base"
+
+rsync -v -r --delete -e "ssh -p $PORT -i $KEY" www/ $USER@$SERVER:$WWW_DIR/

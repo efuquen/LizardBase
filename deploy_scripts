@@ -1,0 +1,12 @@
+#!/bin/bash
+
+USER="root"
+SERVER="ec2-75-101-223-213.compute-1.amazonaws.com"
+PORT=22
+KEY="$HOME/.ssh/lizardbase.pem"
+
+SCRIPT_DIR="/opt/lizard_base"
+
+rsync -v -d --delete -e "ssh -p $PORT -i $KEY" scripts/ $USER@$SERVER:$SCRIPT_DIR/
+rsync -v -d --delete -e "ssh -p $PORT -i $KEY" lib/ $USER@$SERVER:$SCRIPT_DIR/lib
+rsync -v -d --delete -e "ssh -p $PORT -i $KEY" data/ $USER@$SERVER:$SCRIPT_DIR/data

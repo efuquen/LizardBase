@@ -1,0 +1,121 @@
+#content {
+  width:70%;
+  background-color:white;
+  margin:0px 15%;
+  border: 1px;
+}
+
+#header {
+  height:150px;
+}
+
+#logo {
+  margin-left:25px;
+  margin-right:25px;
+
+  height:150px;
+  width:200px;
+
+  background-image:url('../img/logo.gif');
+  background-repeat:no-repeat;
+}
+
+#banner {
+  position:relative;
+  left:200px;
+  top:-150px;
+
+  height:150px;
+  width:700px;
+
+  background-image:url('../img/banner.gif');
+  background-repeat:no-repeat;
+}
+
+#navBar {
+  width:100%;
+  height:30px;
+
+  background-color:#46c846;
+}
+
+#navButtons {
+  position:relative;
+  left:200px;
+
+  height:30px;
+}
+
+.navButton {
+  width:100px;
+  height:30px;
+}
+
+#homeButton {
+  background-image:url('../img/home_button.png');
+/*  background-color:#46af46;*/
+}
+
+#homeButton:hover {
+  background-color:#469646;
+}
+
+#gisButton {
+  position:relative;
+  left:100px;
+  top:-30px;
+
+  background-image:url('../img/gis_button.png');
+}
+
+#gisButton:hover {
+  background-color:#469646;
+}
+
+#jbrowseButton {
+  position:relative;
+  left:200px;
+  top:-60px;
+
+  background-image:url('../img/jbrowse_button.png');
+}
+
+#jbrowseButton:hover {
+  background-color:#469646;
+}
+
+#sidePanel {
+  width:200px;
+  height:420px;
+}
+
+#sidePanel > ul {
+  list-style-type:none;
+  text-align:left;
+  padding:0px;
+  margin:0px;
+  width:150px;
+}
+
+#sidePanel > ul > li {
+  text-align:center;
+  background-color:#c8c8c8;
+  border:2px solid #969696;
+  padding: 5px;
+}
+#sidePanel > ul > li:hover {
+  background-color:#969696;
+}
+
+#sidePanel > ul > li > a {
+  color:black;
+}
+
+#mainPanel {
+  position:relative;
+  left:200px;
+  top:-420px;
+  margin:5px;
+  margin-right:200px;
+  margin-top:0px;
+}
