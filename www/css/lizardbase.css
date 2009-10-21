@@ -1,3 +1,5 @@
+/* main content setup */
+
 #content {
   width:70%;
   background-color:white;
@@ -32,6 +34,44 @@
   background-repeat:no-repeat;
 }
 
+#mainPanel {
+  position:relative;
+  left:200px;
+  top:-420px;
+  margin:5px;
+  margin-right:200px;
+  margin-top:0px;
+}
+
+/** Side Panel setup **/
+
+#sidePanel {
+  width:200px;
+  height:420px;
+}
+
+#sidePanel > ul {
+  list-style-type:none;
+  font-family:Sans-serif;
+  color:#969696;
+  text-align:left;
+  padding:0px;
+  margin-top:30px;
+  margin-bottom:10px;
+  width:150px;
+}
+
+#sidePanel > ul > li {
+  text-align:center;
+  padding: 10px;
+}
+
+#sidePanel > ul > li:hover {
+  font-weight:bold;
+}
+
+/** NavBar setup **/
+
 #navBar {
   width:100%;
   height:30px;
@@ -41,13 +81,13 @@
 
 #navButtons {
   position:relative;
-  left:200px;
+  /*left:200px;*/
 
   height:30px;
 }
 
 .navButton {
-  width:100px;
+  width:150px;
   height:30px;
 }
 
@@ -62,7 +102,7 @@
 
 #gisButton {
   position:relative;
-  left:100px;
+  left:150px;
   top:-30px;
 
   background-image:url('../img/gis_button.png');
@@ -74,7 +114,7 @@
 
 #jbrowseButton {
   position:relative;
-  left:200px;
+  left:300px;
   top:-60px;
 
   background-image:url('../img/jbrowse_button.png');
@@ -84,38 +124,50 @@
   background-color:#469646;
 }
 
-#sidePanel {
-  width:200px;
-  height:420px;
-}
-
-#sidePanel > ul {
-  list-style-type:none;
-  text-align:left;
-  padding:0px;
-  margin:0px;
-  width:150px;
-}
-
-#sidePanel > ul > li {
-  text-align:center;
-  background-color:#c8c8c8;
-  border:2px solid #969696;
-  padding: 5px;
-}
-#sidePanel > ul > li:hover {
-  background-color:#969696;
-}
-
-#sidePanel > ul > li > a {
-  color:black;
-}
-
-#mainPanel {
+#blastButton {
   position:relative;
-  left:200px;
-  top:-420px;
-  margin:5px;
-  margin-right:200px;
-  margin-top:0px;
+  left:450px;
+  top:-90px;
+
+  background-image:url('../img/blast_button.png');
+}
+
+#blastButton:hover {
+  background-color:#469646;
+}
+
+#forumButton {
+  position:relative;
+  left:600px;
+  top:-120px;
+
+  background-image:url('../img/forum_button.png');
+}
+
+#forumButton:hover {
+  background-color:#469646;
+}
+
+#downloadsButton {
+  position:relative;
+  left:750px;
+  top:-150px;
+
+  background-image:url('../img/downloads_button.png');
+}
+
+#downloadsButton:hover {
+  background-color:#469646;
+}
+
+#searchButton {
+  position:relative;
+  left:900px;
+  top:-180px;
+
+  background-image:url('../img/search_button.png');
+}
+
+#searchButton:hover {
+  background-color:#469646;
 }

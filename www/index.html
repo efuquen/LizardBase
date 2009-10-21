@@ -1,7 +1,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <title>LizardBase</title>
+
     <link rel="stylesheet" href="css/lizardbase.css" type="text/css" />
+
     <link rel="stylesheet" href="theme/default/style.css" type="text/css" />
     <link rel="stylesheet" href="theme/default/google.css" type="text/css" />
 
@@ -14,7 +16,7 @@
     <script src="js/lizardbase.js" type="text/javascript"></script>
   </head>
 
-  <body onload="loadGis()">
+  <body onload="loadHome()">
     <div id="content">
       <div id="header">
         <div id='logo'></div>
@@ -26,21 +28,27 @@
           <div id="homeButton" class="navButton" onclick="loadHome()"></div>
           <div id="gisButton" class="navButton" onclick="loadGis()"></div>
           <div id="jbrowseButton" class="navButton" onclick="loadJBrowse()"></div>
+          <div id="blastButton" class="navButton"></div>
+          <div id="forumButton" class="navButton"></div>
+          <div id="downloadsButton" class="navButton"></div>
+          <div id="searchButton" class="navButton"></div>
         </div>
       </div>
 
       <div id="sidePanel">
-        <h5>
-        What is Lizard Base?
-        </h5>
-        <p>
-        It just is.
-        <p>
-        <hr/>
-        <ul>
-          <li><a href="http://news.google.com/news/search?aq=f&pz=1&cf=all&ned=us&hl=en&q=Lizards" target="_blank">Lizards News</a></li>
-          <li><a href="http://www.youtube.com/watch?v=dMtIzVCu9-o" target="_blank">Lizard Video</a></li>
-          <li><a href="http://listen.grooveshark.com/#/song/Like_A_Lizard/2496828" target="_blank">Lizard Song</a></li>
+        <ul id="sidePanel_News">
+          <li>What's New</li>
+          <li>Meetings</li>
+          <li>Collaborations</li>
+          <li>Forum</li>
+          <li>Links</li>
+        </ul>
+
+        <ul id="sidePanel_Info">
+          <li>Data Use Policy</li>
+          <li>FAQs</li>
+          <li>About Us</li>
+          <li>Site Maps</li>
         </ul>
       </div>
 
@@ -48,4 +56,3 @@
     </div>
   </body>
 </html>
-

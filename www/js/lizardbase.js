@@ -4,19 +4,11 @@ function loadHome() {
 
 function loadJBrowse() {
   dojo.place( "<iframe src='../jbrowse/index.html' width='100%' height='500px'></iframe>", "mainPanel", "only" );
-
-  //dojo.byId("jbrowseButton").style.backgroundColor = "#46af46";
-  //dojo.byId("gisButton").style.backgroundColor = "transparent";
-  //dojo.byId("homeButton").style.backgroundColor = "transparent";
 }
 
 var map;
 function loadGis() {
   dojo.place( "<div id='map'></div><div id='coord'></div>", "mainPanel", "only" );
-
-  //dojo.byId("gisButton").style.backgroundColor = "#46af46";
-  //dojo.byId("homeButton").style.backgroundColor = "transparent";
-  //dojo.byId("jbrowseButton").style.backgroundColor = "transparent";
 
   if( map == null ) {
     var options = {
