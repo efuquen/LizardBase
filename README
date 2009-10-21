@@ -1,0 +1,12 @@
+LizardBase Directory Structure
+==============================
+
++ www - contains all the html/css/js for the site
+  + js - js files
+  + css - css files
+  + img - images
+  - index.html - homepage
++ scripts - custom scripts written to import/export data, etc. (i.e. GIS file importing, sql scripts)
++ libs - any libraries the scripts need to run
++ design - mockups, images, you name it, any resource used to help with site layout/design
++ data - any files used to import data into the db (i.e. gis data)
