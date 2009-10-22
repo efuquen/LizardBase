@@ -16,43 +16,75 @@
     <script src="js/lizardbase.js" type="text/javascript"></script>
   </head>
 
-  <body onload="loadHome()">
-    <div id="content">
-      <div id="header">
-        <div id='logo'></div>
-        <div id='banner'></div>
-      </div>
+  <body onload="init()">
+    <div id="header">
+      <div id='logo'></div>
+      <div id='banner'></div>
+    </div>
 
-      <div id="navBar">
-        <div id="navButtons">
-          <div id="homeButton" class="navButton" onclick="loadHome()"></div>
-          <div id="gisButton" class="navButton" onclick="loadGis()"></div>
-          <div id="jbrowseButton" class="navButton" onclick="loadJBrowse()"></div>
-          <div id="blastButton" class="navButton"></div>
-          <div id="forumButton" class="navButton"></div>
-          <div id="downloadsButton" class="navButton"></div>
-          <div id="searchButton" class="navButton"></div>
+    <div id="navBar">
+      <div id="navButtons">
+        <div id="homeButton" class="navButton"><span>Home</span></div>
+        <div id="gisButton" class="navButton"><span>GIS</span></div>
+        <div id="jbrowseButton" class="navButton"><span>JBrowse</span></div>
+        <div id="blastButton" class="navButton"><span>Blast</span></div>
+        <div id="forumButton" class="navButton"><span>Forum</span></div>
+        <div id="downloadsButton" class="navButton"><span>Downloads</span></div>
+        <div id="searchButton" class="navButton"><span>Search</span></div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="homePage" class="contentPage">
+        <div id="sidePanel">
+          <ul id="sidePanel_News">
+            <li>What's New</li>
+            <li>Meetings</li>
+            <li>Collaborations</li>
+            <li>Forum</li>
+            <li>Links</li>
+          </ul>
+
+          <ul id="sidePanel_Info">
+            <li>Data Use Policy</li>
+            <li>FAQs</li>
+            <li>About Us</li>
+            <li>Site Maps</li>
+          </ul>
+        </div>
+        <div id="mainPanel">
+          <h3>
+            What is LizardBase?
+          </h3>
+          <p>
+             Lizards have become important model systems for genetic, organismal, and
+             ecological studies. With the recent completion of the Anolis carolinensis (green
+             anole) genome and increasing interest in lizard biology, LizardBase was created
+             to facilitate global data dissemination and collaboration. This website provides
+             an entryway into lizard biology via two portals below. The genomics portal
+             leads to a set of bioinformatics related resources and tools. The GeoBiology
+             portal leads to a database of lizard related data and resources, easily navigated
+             via a geographical interface.
+          </p>
+          <div id="mainPortals">
+            <div>
+              <a href=""><img src=""></img></a>
+            </div>
+            <div>
+              <a href=""><img src=""></img></a>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div id="sidePanel">
-        <ul id="sidePanel_News">
-          <li>What's New</li>
-          <li>Meetings</li>
-          <li>Collaborations</li>
-          <li>Forum</li>
-          <li>Links</li>
-        </ul>
-
-        <ul id="sidePanel_Info">
-          <li>Data Use Policy</li>
-          <li>FAQs</li>
-          <li>About Us</li>
-          <li>Site Maps</li>
-        </ul>
+  
+      <div id="gisPage" class="contentPage">
+        <div id="map"></div>
+        <div id="coords"></div>
       </div>
 
-      <div id="mainPanel"></div>
+      <div id="jbrowsePage" class="contentPage">
+        <iframe src='../jbrowse/index.html'></iframe>
+      </div>
     </div>
   </body>
 </html>

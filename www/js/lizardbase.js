@@ -1,17 +1,47 @@
+
+function init() {
+  loadHome();
+  dojo.connect( dojo.byId( "homeButton" ), "onclick", loadHome );
+  dojo.connect( dojo.byId( "jbrowseButton" ), "onclick", loadJBrowse );
+  dojo.connect( dojo.byId( "gisButton" ), "onclick", loadGis );
+}
+
+function hideAll() {
+  dojo.query( "#homePage" ).style( "display", "none" );
+  dojo.query( "#gisPage" ).style( "display", "none" );
+  dojo.query( "#jbrowsePage" ).style( "display", "none" );
+  //dojo.place( "", "jbrowsePage", "only" );
+}
+
+function show( element ) {
+  element.style.display="block";
+}
+
 function loadHome() {
-  dojo.place( "<div id='homeContent'><h1>Home Page Placeholder</h1></div>", "mainPanel", "only" );
+  hideAll();
+  dojo.query( "#homePage" ).style( "display", "" );
 }
 
 function loadJBrowse() {
-  dojo.place( "<iframe src='../jbrowse/index.html' width='100%' height='500px'></iframe>", "mainPanel", "only" );
+  hideAll();
+  dojo.query( "#jbrowsePage" ).style( "display", "" );
+  //dojo.place( "<iframe src='../jbrowse/index.html'></iframe>", "jbrowsePage", "only" );
 }
 
 var map;
 function loadGis() {
-  dojo.place( "<div id='map'></div><div id='coord'></div>", "mainPanel", "only" );
+  hideAll();
+  dojo.query( "#gisPage" ).style( "display", "" );
 
   if( map == null ) {
-    var options = {
+    makeMap();
+  } else {
+    map.render( 'map' );
+  }
+}
+
+function makeMap() {
+  var options = {
       // the "community" epsg code for spherical mercator
           projection: "EPSG:900913",
           // map horizontal units are meters
@@ -58,8 +88,6 @@ function loadGis() {
       );
 
     map.zoomToExtent( usBounds );
-  } else {
-    map.render( 'map' );
-  }
+
 }
 
