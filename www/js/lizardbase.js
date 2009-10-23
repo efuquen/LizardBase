@@ -10,11 +10,6 @@ function hideAll() {
   dojo.query( "#homePage" ).style( "display", "none" );
   dojo.query( "#gisPage" ).style( "display", "none" );
   dojo.query( "#jbrowsePage" ).style( "display", "none" );
-  //dojo.place( "", "jbrowsePage", "only" );
-}
-
-function show( element ) {
-  element.style.display="block";
 }
 
 function loadHome() {
@@ -25,7 +20,7 @@ function loadHome() {
 function loadJBrowse() {
   hideAll();
   dojo.query( "#jbrowsePage" ).style( "display", "" );
-  //dojo.place( "<iframe src='../jbrowse/index.html'></iframe>", "jbrowsePage", "only" );
+  dojo.place( "<iframe src='../jbrowse/index.html'></iframe>", "jbrowsePage", "only" );
 }
 
 var map;
@@ -75,13 +70,33 @@ function makeMap() {
     );
     var lizardBase = new OpenLayers.Layer.WMS("Anole Lizard Specimens",
        "http://ec2-75-101-223-213.compute-1.amazonaws.com/geoserver/wms?service=wms",
-       {layers: 'LizardBase:geom',
+       {layers: 'LizardBase:features',
         srs: 'EPSG:4326',
         format: 'image/png',
         transparent: true},
        {isBaseLayer: false});
 
     map.addLayers([gphy, gmap, ghyb, gsat, lizardBase]);
+
+    info = new OpenLayers.Control.WMSGetFeatureInfo({
+        url: 'http://ec2-75-101-223-213.compute-1.amazonaws.com/geoserver/wms?service=wms', 
+        title: 'Anole Specimen',
+        queryVisible: true,
+        eventListeners: {
+            getfeatureinfo: function(event) {
+                map.addPopup(new OpenLayers.Popup.FramedCloud(
+                    "anoleLoc", 
+                    map.getLonLatFromPixel(event.xy),
+                    null,
+                    event.text,
+                    null,
+                    true
+                ));
+            }
+        }
+    });
+    map.addControl(info);
+    info.activate();
 
     var usBounds = new OpenLayers.Bounds(
       -10018754, 2504689, -7514066, 5009377

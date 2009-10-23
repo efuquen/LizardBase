@@ -112,7 +112,7 @@ body {
   left:210px;
   top:-420px;
   margin:5px;
-  margin-right:200px;
+  margin-right:210px;
   margin-top:0px;
   width:700px;
 }
@@ -146,10 +146,52 @@ body {
   cursor:pointer;
 }
 
+#mainPortals {
+  margin-top:45px;
+}
+
+.portal > h4 {
+  text-align:center;
+}
+
+#genomicsPortal {
+  float:left;
+
+  width:265px;
+  /*margin-left:150px;*/
+}
+
+#geobiologyPortal {
+  /*position:relative;
+  left:365px;
+  top:-265px;*/
+  float:right;
+
+  width:265px;
+
+  /*float:right;
+  margin-left:150px;*/
+}
+
 /** GIS Page Setup **/
 
 #gisPage {
   margin:5px;
+}
+
+#gisSidePanel {
+  width:210px;
+  height:420px;
+}
+
+#map {
+  position:relative;
+  left:210px;
+  top:-420px;
+
+  width:700px;
+  height:420px;
+ /* margin-right:210px;*/
 }
 
 /** JBrowse Page Setup **/
