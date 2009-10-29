@@ -8,13 +8,19 @@ function init() {
 
 function hideAll() {
   dojo.query( "#homePage" ).style( "display", "none" );
+  dojo.query( "#homeButton" ).style( "background-color", "#46c846" );
+
   dojo.query( "#gisPage" ).style( "display", "none" );
+  dojo.query( "#gisButton" ).style( "background-color", "#46c846" );
+
   dojo.query( "#jbrowsePage" ).style( "display", "none" );
+  dojo.query( "#jbrowseButton" ).style( "background-color", "#46c846" );
 }
 
 function loadHome() {
   hideAll();
   dojo.query( "#homePage" ).style( "display", "" );
+  dojo.query( "#homeButton" ).style( "background-color", "#469646" );
 }
 
 function loadJBrowse() {
