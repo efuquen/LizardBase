@@ -4,7 +4,7 @@ body {
   background-color:white;
  /* border: 1px;*/
 
-  font-family:sans-serif;
+  font-family:Corbel,sans-serif;
 }
 
 #header {
@@ -106,6 +106,7 @@ body {
 
 #homePage {
 	width:910px;
+  height:600px;
   margin:0px auto;
 }
 
@@ -150,6 +151,7 @@ body {
 
 #mainPortals {
   margin-top:45px;
+  height:325px;
 }
 
 .portal > h4 {
@@ -157,19 +159,20 @@ body {
 }
 
 #genomicsPortal {
-  float:left;
+ /* float:left;*/
 
   width:265px;
+  height:325px;
   /*margin-left:150px;*/
 }
 
 #geobiologyPortal {
-  /*position:relative;
+  position:relative;
   left:365px;
-  top:-265px;*/
-  float:right;
+  top:-325px;
 
   width:265px;
+  height:325px;
 
   /*float:right;
   margin-left:150px;*/
@@ -179,25 +182,25 @@ body {
 
 #gisPage {
   margin-top:10px;
-	width:910px;
+	width:80%;
+  height:90%;
   margin-left:auto;
   margin-right:auto;
 }
 
-#gisSidePanel {
+/*#gisSidePanel {
   width:210px;
   height:420px;
-}
+}*/
 
+/*
 #map {
-  position:relative;
+ position:relative;
   left:210px;
   top:-420px;
 
-  width:700px;
-  height:420px;
- /* margin-right:210px;*/
-}
+ margin-right:210px;
+}*/
 
 /** JBrowse Page Setup **/
 
@@ -208,5 +211,28 @@ body {
 #jbrowsePage > iframe {
   margin:0px 5%;
   width:90%;
-  height:500px;
+  height:90%;
+}
+
+/** Whats New Page Setup **/
+
+#whatsNewPage {
+	width:910px;
+  height:600px;
+  margin:0px auto;
+}
+
+#whatsNewPage > h3 {
+	text-align:center;
+}
+
+#whatsNewPage > table {
+	margin:0px auto;
+
+	border-style:solid;
+	border-width:5px;
+}
+
+#footer {
+	margin-top:10px;
 }

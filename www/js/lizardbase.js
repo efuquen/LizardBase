@@ -4,6 +4,7 @@ function init() {
   dojo.connect( dojo.byId( "homeButton" ), "onclick", loadHome );
   dojo.connect( dojo.byId( "jbrowseButton" ), "onclick", loadJBrowse );
   dojo.connect( dojo.byId( "gisButton" ), "onclick", loadGis );
+  dojo.connect( dojo.byId( "whatsNewLink" ), "onclick", loadWhatsNew );
 }
 
 function hideAll() {
@@ -15,6 +16,13 @@ function hideAll() {
 
   dojo.query( "#jbrowsePage" ).style( "display", "none" );
   dojo.query( "#jbrowseButton" ).style( "background-color", "#46c846" );
+
+  dojo.query( "#whatsNewPage" ).style( "display", "none" );
+}
+
+function loadWhatsNew() {
+	hideAll();
+  dojo.query( "#whatsNewPage" ).style( "display", "" );
 }
 
 function loadHome() {
