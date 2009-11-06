@@ -1,0 +1,4 @@
+AuthName "Add your login message here."
+AuthType Basic
+AuthUserFile /srv/http/lizard_base/.htpasswd
+require user lizardbase

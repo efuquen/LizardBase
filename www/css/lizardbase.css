@@ -193,14 +193,24 @@ body {
   height:420px;
 }*/
 
-/*
+#controls {
+	width:150px;
+}
+
+#layerswitcher {
+	position: relative;
+  top: 0px;
+	right: 0px;	
+}
+
 #map {
- position:relative;
+ /*display:inline-block;*/
+ /*position:relative;
   left:210px;
-  top:-420px;
+  top:-420px;*/
 
  margin-right:210px;
-}*/
+}
 
 /** JBrowse Page Setup **/
 

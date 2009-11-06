@@ -9,13 +9,13 @@ function init() {
 
 function hideAll() {
   dojo.query( "#homePage" ).style( "display", "none" );
-  dojo.query( "#homeButton" ).style( "background-color", "#46c846" );
+  //dojo.query( "#homeButton" ).style( "background-color", "#46c846" );
 
   dojo.query( "#gisPage" ).style( "display", "none" );
-  dojo.query( "#gisButton" ).style( "background-color", "#46c846" );
+  //dojo.query( "#gisButton" ).style( "background-color", "#46c846" );
 
   dojo.query( "#jbrowsePage" ).style( "display", "none" );
-  dojo.query( "#jbrowseButton" ).style( "background-color", "#46c846" );
+  //dojo.query( "#jbrowseButton" ).style( "background-color", "#46c846" );
 
   dojo.query( "#whatsNewPage" ).style( "display", "none" );
 }
@@ -28,7 +28,7 @@ function loadWhatsNew() {
 function loadHome() {
   hideAll();
   dojo.query( "#homePage" ).style( "display", "" );
-  dojo.query( "#homeButton" ).style( "background-color", "#469646" );
+  //dojo.query( "#homeButton" ).style( "background-color", "#469646" );
 }
 
 function loadJBrowse() {
@@ -64,7 +64,8 @@ function makeMap() {
 
     map = new OpenLayers.Map('map',options);
     map.addControl(new OpenLayers.Control.LayerSwitcher());
-    map.addControl(new OpenLayers.Control.MousePosition( {div: "coord"} ));
+    //map.addControl(new OpenLayers.Control.LayerSwitcher( {'div': OpenLayers.Util.getElement('layerswitcher') } ));
+    //map.addControl(new OpenLayers.Control.MousePosition( {div: "coord"} ));
 
     var gphy = new OpenLayers.Layer.Google(
         "Google Physical",
@@ -117,6 +118,5 @@ function makeMap() {
       );
 
     map.zoomToExtent( usBounds );
-
 }
 
