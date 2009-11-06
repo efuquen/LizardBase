@@ -193,23 +193,18 @@ body {
   height:420px;
 }*/
 
-#controls {
+#gisFilters {
 	width:150px;
-}
-
-#layerswitcher {
-	position: relative;
-  top: 0px;
-	right: 0px;	
+	height:420px;
 }
 
 #map {
  /*display:inline-block;*/
- /*position:relative;
-  left:210px;
-  top:-420px;*/
+ position:relative;
+  left:150px;
+  top:-420px;
 
- margin-right:210px;
+ margin-right:150px;
 }
 
 /** JBrowse Page Setup **/

@@ -94,7 +94,9 @@ try {
 
 def getLocId( name: String, county: String, state: String, country: String, userId: Long ): Long = {
   getId(
-    String.format( "SELECT locId FROM gis.location WHERE name='%s'", name ),
+    String.format( 
+			"""SELECT locId FROM gis.location 
+			WHERE name='%s' AND county='%s' AND state='%s' AND country='%s'""", name, county, state, country ),
     String.format(
         """INSERT INTO gis.location
         (name, county, state, country, userId)

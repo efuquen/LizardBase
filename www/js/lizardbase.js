@@ -5,6 +5,8 @@ function init() {
   dojo.connect( dojo.byId( "jbrowseButton" ), "onclick", loadJBrowse );
   dojo.connect( dojo.byId( "gisButton" ), "onclick", loadGis );
   dojo.connect( dojo.byId( "whatsNewLink" ), "onclick", loadWhatsNew );
+
+	dojo.connect( dojo.byId( "gisFilterSubmit" ), "onclick", reloadGis );
 }
 
 function hideAll() {
@@ -44,9 +46,19 @@ function loadGis() {
 
   if( map == null ) {
     makeMap();
+    map.render( 'map' );
   } else {
     map.render( 'map' );
   }
+}
+
+function reloadGis() {
+	map.destroy();
+	map = null;
+	dojo.empty( "map" );
+
+	makeMap();
+  map.render( 'map' );
 }
 
 function makeMap() {
@@ -83,11 +95,29 @@ function makeMap() {
         "Google Satellite",
         {type: G_SATELLITE_MAP, numZoomLevels: 20, sphericalMercator: true}
     );
+
+		gisSex = dojo.byId( "gisSexSelect" )
+	  currentGisSex = gisSex.options[gisSex.selectedIndex]
+		var cql_filter_query = "";
+
+		console.log( "Value=" + currentGisSex.value )
+
+		if( currentGisSex.value == "both" ) {
+			cql_filter_query = cql_filter_query + "sex = 'F' OR sex = 'M'"
+		} else if( currentGisSex.value == "male" ) {
+			cql_filter_query = cql_filter_query + "sex = 'M'"
+		} else if( currentGisSex.value == "female" ) {
+			cql_filter_query = cql_filter_query + "sex = 'F'"
+		}
+
+		console.log( "CQLFILTER=" + cql_filter_query )
+
     var lizardBase = new OpenLayers.Layer.WMS("Anole Lizard Specimens",
        "http://ec2-75-101-223-213.compute-1.amazonaws.com/geoserver/wms?service=wms",
        {layers: 'LizardBase:features',
         srs: 'EPSG:4326',
         format: 'image/png',
+				cql_filter: cql_filter_query,
         transparent: true},
        {isBaseLayer: false});
 
