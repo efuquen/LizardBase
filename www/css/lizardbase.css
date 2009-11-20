@@ -2,6 +2,7 @@
 
 body {
   background-color:white;
+  font-size:12px;
  /* border: 1px;*/
 
   font-family:Corbel,sans-serif;
@@ -37,26 +38,31 @@ body {
 /** NavBar setup **/
 
 #navBar {
-  height:30px;
+  height:25px;
 
-  background-color:#46c846;
+  /*background-color:#46c846;*/
+  /*background-color:#009214;*/
+  background-color:#009200;
   vertical-align:middle;
 }
 
 #navButtons {
-  height:30px;
+  height:25px;
 }
 
 #navButtons > div:hover {
-  background-color:#469646;
+  /*background-color:#469646;*/
+  /*background-color:#005b2d;*/
+  background-color:#005b00;
   cursor:pointer;
 }
 
 .navButton {
   width:130px;
-  height:30px;
+  height:25px;
 
-  font-size:20px;
+  font-size:17px;
+  /*font-weight:bold;*/
   color:white;
   text-align:center;
 }
@@ -69,37 +75,37 @@ body {
 #gisButton {
   position:relative;
   left:130px;
-  top:-30px;
+  top:-25px;
 }
 
 #jbrowseButton {
   position:relative;
   left:260px;
-  top:-60px;
+  top:-50px;
 }
 
 #blastButton {
   position:relative;
   left:390px;
-  top:-90px;
+  top:-75px;
 }
 
 #forumButton {
   position:relative;
   left:520px;
-  top:-120px;
+  top:-100px;
 }
 
 #downloadsButton {
   position:relative;
   left:650px;
-  top:-150px;
+  top:-125px;
 }
 
 #searchButton {
   position:relative;
   left:780px;
-  top:-180px;
+  top:-150px;
 }
 
 /** Home Page setup **/
@@ -118,10 +124,15 @@ body {
   margin-right:210px;
   margin-top:0px;
   width:700px;
+  font-size:15px;
 }
 
 #mainPanel > h3 {
   text-align:center;
+}
+
+#mainPanel > p { 
+	line-height:150%;
 }
 
 #sidePanel {
@@ -131,7 +142,8 @@ body {
 
 #sidePanel > ul {
   list-style-type:none;
-  color:#969696;
+  /*color:#969696;*/
+  color:#7d7d7d;
   text-align:left;
   padding:0px;
   margin-top:30px;
