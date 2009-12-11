@@ -9,7 +9,7 @@ body {
 }
 
 #header {
-  height:240px;
+  height:190px;
   width:910px;
   margin:0px auto;
 }
@@ -17,10 +17,10 @@ body {
 #banner {
   position:relative;
 
-  height:200px;
+  height:150px;
 
-  margin-right:47px;
-  margin-left:47px;
+  margin-right:26px;
+  margin-left:26px;
   margin-bottom:10px;
 
   background-image:url('../img/banner.png');
@@ -112,7 +112,7 @@ body {
 
 #homePage {
 	width:910px;
-  height:600px;
+  height:650px;
   margin:0px auto;
 }
 
@@ -163,28 +163,36 @@ body {
 
 #mainPortals {
   margin-top:45px;
-  height:325px;
+  height:300px;
 }
 
 .portal > h4 {
   text-align:center;
 }
 
+#genomicsPortal:hover {
+  cursor:pointer;
+}
+
+#geobiologyPortal:hover {
+  cursor:pointer;
+}
+
 #genomicsPortal {
  /* float:left;*/
 
-  width:265px;
-  height:325px;
-  /*margin-left:150px;*/
+  width:200px;
+  height:300px;
+  margin-left:50px;
 }
 
 #geobiologyPortal {
   position:relative;
-  left:365px;
-  top:-325px;
+  left:400px;
+  top:-300px;
 
-  width:265px;
-  height:325px;
+  width:200px;
+  height:300px;
 
   /*float:right;
   margin-left:150px;*/
@@ -194,7 +202,7 @@ body {
 
 #gisPage {
   margin-top:10px;
-	width:80%;
+	width:100%;
   height:90%;
   margin-left:auto;
   margin-right:auto;
@@ -206,17 +214,17 @@ body {
 }*/
 
 #gisFilters {
-	width:150px;
+	width:200px;
 	height:420px;
 }
 
 #map {
  /*display:inline-block;*/
  position:relative;
-  left:150px;
+  left:200px;
   top:-420px;
 
- margin-right:150px;
+ /*margin-right:200px;*/
 }
 
 /** JBrowse Page Setup **/
@@ -250,6 +258,31 @@ body {
 	border-width:5px;
 }
 
+/** Data Mapping Portal **/
+
+#dataMappingPortal {
+	width:910px;
+  /*height:650px;*/
+  margin:0px auto;
+}
+
+#dataForm {
+  text-align:center;
+  font-style:italic;
+}
+
+#dataMappingPortal > h2 {
+	text-align:center;
+}
+
+#dataMappingPortal > h3 {
+	text-align:center;
+}
+
 #footer {
 	margin-top:10px;
+}
+
+#footer > p {
+  text-align:center;
 }

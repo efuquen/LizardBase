@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USER="root"
-SERVER="ec2-75-101-223-213.compute-1.amazonaws.com"
+SERVER="ec2-174-129-239-85.compute-1.amazonaws.com"
 PORT=22
 KEY="$HOME/.ssh/lizardbase.pem"
 

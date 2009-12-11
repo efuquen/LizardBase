@@ -5,6 +5,7 @@ function init() {
   dojo.connect( dojo.byId( "jbrowseButton" ), "onclick", loadJBrowse );
   dojo.connect( dojo.byId( "gisButton" ), "onclick", loadGis );
   dojo.connect( dojo.byId( "whatsNewLink" ), "onclick", loadWhatsNew );
+  dojo.connect( dojo.byId( "dataMappingLink" ), "onclick", loadDataMappingPortal );
 
 	dojo.connect( dojo.byId( "gisFilterSubmit" ), "onclick", reloadGis );
 }
@@ -20,11 +21,18 @@ function hideAll() {
   //dojo.query( "#jbrowseButton" ).style( "background-color", "#46c846" );
 
   dojo.query( "#whatsNewPage" ).style( "display", "none" );
+
+  dojo.query( "#dataMappingPortal" ).style( "display", "none" );
 }
 
 function loadWhatsNew() {
 	hideAll();
   dojo.query( "#whatsNewPage" ).style( "display", "" );
+}
+
+function loadDataMappingPortal() {
+	hideAll();
+  dojo.query( "#dataMappingPortal" ).style( "display", "" );
 }
 
 function loadHome() {
@@ -98,22 +106,50 @@ function makeMap() {
 
 		gisSex = dojo.byId( "gisSexSelect" )
 	  currentGisSex = gisSex.options[gisSex.selectedIndex]
+
+    gisYearFrom = dojo.byId( "gisYearFrom" )
+    gisYearTo = dojo.byId( "gisYearTo" )
+
+    gisState = dojo.byId( "gisState" )
+    gisCounty = dojo.byId( "gisCounty" )
+    gisMuseum = dojo.byId( "gisMuseum" )
+
 		var cql_filter_query = "";
 
 		console.log( "Value=" + currentGisSex.value )
 
 		if( currentGisSex.value == "both" ) {
-			cql_filter_query = cql_filter_query + "sex = 'F' OR sex = 'M'"
+			cql_filter_query = cql_filter_query + "(sex = 'F' OR sex = 'M')"
 		} else if( currentGisSex.value == "male" ) {
 			cql_filter_query = cql_filter_query + "sex = 'M'"
 		} else if( currentGisSex.value == "female" ) {
 			cql_filter_query = cql_filter_query + "sex = 'F'"
 		}
 
+    if( gisYearFrom.value != null && gisYearFrom.value != "" ) {
+			cql_filter_query = cql_filter_query + " AND year > " + gisYearFrom.value 
+    }
+
+    if( gisYearTo.value != null && gisYearTo.value != "" ) {
+			cql_filter_query = cql_filter_query + " AND year < " + gisYearTo.value
+    }
+
+    if( gisState.value != null && gisState.value != "Any" ) {
+			cql_filter_query = cql_filter_query + " AND state = '" + gisState.value + "'"
+    }
+
+    if( gisCounty.value != null && gisCounty.value != "Any" ) {
+			cql_filter_query = cql_filter_query + " AND county = '" + gisCounty.value + "'"
+    }
+
+    if( gisMuseum.value != null && gisMuseum.value != "Any" ) {
+			cql_filter_query = cql_filter_query + " AND name = '" + gisMuseum.value + "'"
+    }
+
 		console.log( "CQLFILTER=" + cql_filter_query )
 
     var lizardBase = new OpenLayers.Layer.WMS("Anole Lizard Specimens",
-       "http://ec2-75-101-223-213.compute-1.amazonaws.com/geoserver/wms?service=wms",
+       "http://ec2-174-129-239-85.compute-1.amazonaws.com/geoserver/wms?service=wms",
        {layers: 'LizardBase:features',
         srs: 'EPSG:4326',
         format: 'image/png',
@@ -124,7 +160,7 @@ function makeMap() {
     map.addLayers([gphy, gmap, ghyb, gsat, lizardBase]);
 
     info = new OpenLayers.Control.WMSGetFeatureInfo({
-        url: 'http://ec2-75-101-223-213.compute-1.amazonaws.com/geoserver/wms?service=wms', 
+        url: 'http://ec2-174-129-239-85.compute-1.amazonaws.com/geoserver/wms?service=wms', 
         title: 'Anole Specimen',
         queryVisible: true,
         eventListeners: {

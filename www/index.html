@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="theme/default/style.css" type="text/css" />
     <link rel="stylesheet" href="theme/default/google.css" type="text/css" />
 
-    <script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA3io7bmHdMPqmXZbVX26zNxTfA2NqXjj5kFYyWuipMasdTDm2iBR2joPGhhXnH1R6zH_X_eRCEUVoyg'></script>
+    <script src='http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAA3io7bmHdMPqmXZbVX26zNxRRdOeCiYcT_eXx0SqEyXm4MTfLoBQeyKoXvV4w8Zp0dXdVXGF3iB8cpQ'></script>
     <script src="OpenLayers.js" type="text/javascript"></script>
 
     <script type="text/javascript"
@@ -51,18 +51,16 @@
           </ul>
         </div>
         <div id="mainPanel">
-          <h3>
-            What is LizardBase?
-          </h3>
           <p>
-             Lizards have become important model systems for genetic, organismal, and
-             ecological studies. With the recent completion of the Anolis carolinensis (green
-             anole) genome and increasing interest in lizard biology, LizardBase was created
-             to facilitate global data dissemination and collaboration. This website provides
-             an entryway into lizard biology via two portals below. The genomics portal
-             leads to a set of bioinformatics related resources and tools. The GeoBiology
-             portal leads to a database of lizard related data and resources, easily navigated
-             via a geographical interface.
+          A growing interest in lizard biology is precipitating an unprecedented amount of novel data. With the recent assembly of the green anole (Anolis carolinensis) genome, lizards are fast becoming important biological models for ecologists, functional morphologists, and medical geneticists. However, with the advent of high-throughput biology, we now face one of its greatest challenges: the management and integration of different types of data.
+          </p>
+
+          <p>
+          lizardbase is being developed to fill the need for a centralized and consolidated informatics resource that can connect many active areas of lizard research. Our primary goal is to provide biologists with a forum to facilitate both scientific discovery and collaboration. Furthermore, we are building this site to facilitate citizen involvement in the sciences.
+          </p>
+
+          <p>
+          To integrate the wide variety of different data types, we employ an approach that maps biological features onto two common references. The Genomics Portal leads to a set of bioinformatics-related resources and tools that use the green anole genome as a reference. The Data Mapping Portal leads to a database of lizard-related data and resources mapped onto global coordinates, and easily navigated using a geographical interface.
           </p>
           <div id="mainPortals">
             <div id="genomicsPortal" class="portal" >
@@ -70,8 +68,8 @@
               <h4>Genomics Portal</h4>
             </div>
             <div id="geobiologyPortal" class="portal" >
-              <img src="img/LizardGlobe.png"></img>
-              <h4>Geobiology Portal</h4>
+              <img id="dataMappingLink" src="img/LizardGlobe.png"></img>
+              <h4>Data Mining Portal</h4>
             </div>
           </div>
         </div>
@@ -82,13 +80,46 @@
 					<h4>GIS Filters</h4>
 					<div id="gisSex">
 						Sex
-						<br>
+            <br><hr><br>
 						<select id="gisSexSelect">
-							<option value="both">Both</option>
+							<option value="both"></option>
 							<option value="male">Male</option>
 							<option value="female">Female</option>
 						</select> 
 					</div>
+          <br>
+          <div>
+            Year
+            <br><hr><br>
+            From: <input id="gisYearFrom" type="text" maxlength="4" size="4" />
+            <br>
+            To: <input id="gisYearTo" type="text" maxlength="4" size="4" />
+          </div>
+          <br>
+          <div>
+            Location
+            <br><hr><br>
+            State: 
+            <select id="gisState">
+              <option value="Any"></option>
+              <option value="Florida">Florida</option>
+              <option value="Georgia">Georgia</option>
+            </select>
+            <br>
+            County:
+            <select id="gisCounty">
+              <option value="Any"></option>
+              <option value="Alachua">Alachua</option>
+            </select>
+            <br>
+            Museum:
+            <select id="gisMuseum">
+              <option value="Any" />
+              <option value="personal">personal</option>
+              <option value="FLMNH">FLMNH</option>
+            </select>
+          </div>
+          <br>
 					<input id="gisFilterSubmit" type="button" value="Apply Filters"/>
 				</div>
         <div id="map">
@@ -111,6 +142,49 @@
 					</tr>
 				</table>
 			</div>
+
+      <div id="dataMappingPortal" class="contentPage">
+        <h2>Welcome to the Data Mapping Portal</h2>
+        <h3>Terms and Conditions of Use</h3>
+        <p>We ask users of our data to comply with the following terms and conditions:</p>
+        <ul>
+          <li>
+          Data are to be used only for purposes of research and education. Commercial use for profit is
+          prohibited without written permission from lizardbase.
+          </li>
+          <li>
+          Data are for individual researcher's personal use and should not be transferred to a third party.
+          </li>
+          <li>
+          Data in their raw form (including GIS coordinates, specific collecting locality, date of collection,
+          collector, etc.) are not to be incorporated into any publicly available data base (e.g., web site) or
+          distributed via compact disc or hard copy without written permission from lizardbase curators
+          curators.
+          </li>
+        </ul>
+        <p>
+        Lizardbase.org and the contributor of used datasets should be explicitly acknowledged in each publication
+        that is based in part or entirely on specimen records or data derived from this site. We also request that
+        users of our data send a reprint of each paper published or a copy of any book that results from use of
+        lizardbase data to: Temple University, Department of Biology, 1900 North 12th Street, Philadelphia, PA
+        19122. PDF files of reprints should be sent to: lizardbase@temple.edu.
+        </p>
+        <p>
+        Finally, we request that investigators point out any questionable localities or apparent misidentifications in
+        our records.
+        </p>
+        <p>
+        By entering this portion of the site, I acknowledge reading and agree to the terms and conditions stated
+        above.
+        </p>
+        <br>
+        <form id="dataForm">
+          <p>Please enter your name and affiliation below to help us track the use of this database.</p>
+          <input id="dataName" type="text" size="30" value="First and Last Name" /> 
+          <input id="dataAffiliation" type="text" size="30" value="Affiliation" />
+          <input id="dataSubmit" type="submit" value="Enter" />
+        </form>
+      </div>
 
     </div>
 
